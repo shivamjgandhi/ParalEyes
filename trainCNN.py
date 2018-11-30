@@ -5,8 +5,8 @@ from keras.applications import VGG16
 from keras.preprocessing.image import ImageDataGenerator
 
 #Load the VGG model
-image_size1 = 480
-image_size2 = 640
+image_size1 = 60
+image_size2 = 90
 vgg_conv = VGG16(weights='imagenet', 
                  include_top=False, 
                  input_shape=(image_size1, image_size2, 3))
@@ -53,8 +53,8 @@ validation_datagen = ImageDataGenerator(rescale=1./255)
 train_batchsize = 100
 val_batchsize = 10
 
-train_dir='training_data/train'
-validation_dir='training_data/validation'
+train_dir='C:/Users/Sjgandhi1998/Software/Data/ParalEyes/training_data/train'
+validation_dir='C:/Users/Sjgandhi1998/Software/Data/ParalEyes/training_data/validation'
 
 train_generator = train_datagen.flow_from_directory(
     train_dir,
