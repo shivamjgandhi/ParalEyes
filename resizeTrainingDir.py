@@ -19,10 +19,11 @@ dirList = ['training_data/train/center',
 for directory in dirList:
 	for filename in os.listdir(directory):
 		if filename.endswith(".png"):
-			img = cv2.imread(filename)
-			newImg = lowerImageResolution(img, 0.5)
-			os.remove(filename)
-			cv2.imwrite('C:/Users/Sjgandhi1998/Desktop/ParalEyes/' + directory + filename, newframe)
+			img = cv2.imread(directory + '/' + filename)
+			newImg = lowerImageResolution(img, 0.25)
+			cv2.imshow('image', newImg)
+			print('C:/Users/Sjgandhi1998/Software/ParalEyes/' + directory + '/' + filename)
+			cv2.imwrite('C:/Users/Sjgandhi1998/Software/ParalEyes/' + directory + '/' + filename, newImg)
 			continue
 		else:
 			continue
