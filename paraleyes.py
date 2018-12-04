@@ -16,6 +16,10 @@ while(True):
     # Display the resulting frame
     cv2.imshow('frame', newframe)
 
+    # Extract the eyes out of the frame
+    eyes = cv2.CascadeClassifier('haarcascade_eye.xml')
+    detected = eyes.detectMultiScale(frame, 1.3, 5)
+
     # Classify image via neural net
     predictIxs = model.predict(frame, batch_size=None, verbose=0, steps=None)
 
