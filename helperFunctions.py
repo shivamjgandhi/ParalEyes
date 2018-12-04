@@ -64,3 +64,4 @@ def printLetter(readings):
 		return "a"
 	elif (triple == (0,0,1)):
 		return "b"
+
