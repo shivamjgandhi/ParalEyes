@@ -45,9 +45,9 @@ while 1:
 		blur=frame
 		edges=frame
 		eyes = cv2.CascadeClassifier('haarcascade_eye.xml')
-		print(eyes)
 		detected = eyes.detectMultiScale(frame, 1.3, 5)
-		print(detected)
+		if (len(detected) > 0):
+			print("look here: ", detected[0])
 		for (x,y,w,h) in detected: #similar to face detection
 			cv2.rectangle(frame, (x,y), ((x+w),(y+h)), (0,0,255),1)	 #draw rectangle around eyes
 			cv2.line(frame, (x,y), ((x+w,y+h)), (0,0,255),1)   #draw cross
