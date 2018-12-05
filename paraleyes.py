@@ -9,6 +9,7 @@ def main():
     model = load_model('parlEyes_model.h5')
     previousClassifications = np.zeros((1,30))
     index = 0
+    isTyping = False
 
     while(True):
         # Capture frame-by-frame
@@ -16,6 +17,10 @@ def main():
 
         # Display the resulting frame
         cv2.imshow('frame', newframe)
+
+        if (isTyping):
+
+        else:
 
         # Extract the eyes out of the frame
         eyes = cv2.CascadeClassifier('haarcascade_eye.xml')
