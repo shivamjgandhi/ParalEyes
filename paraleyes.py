@@ -10,6 +10,8 @@ def main():
     previousClassifications = np.zeros((1,30))
     index = 0
     isTyping = False
+    memory = np.zeros((30,1))
+    currentState = 0
 
     while(True):
         # Capture frame-by-frame
@@ -19,7 +21,7 @@ def main():
         cv2.imshow('frame', newframe)
 
         if (isTyping):
-
+            
         else:
 
         # Extract the eyes out of the frame
@@ -30,8 +32,12 @@ def main():
         predictIxs = model.predict(frame, batch_size=None, verbose=0, steps=None)
 
         # Store value in memory bank
+        newMemory = np.zeros((30,1))
+        newMemory[0:28] = memory[1:29]
+        newMemory[29] = predictIxs
 
         # Check if memory bank warrants adding a new letter
+        state = changeState(currentState, memory)
 
         # If user did two long blinks, then end
 

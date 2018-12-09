@@ -16,7 +16,7 @@ def changeState(current_state, readings):
 	new_state: the new direction that the user is looking
 	"""
 	count = {
-	0: 0
+	0: 0,
 	1: 0,
 	2: 0,
 	3: 0,
@@ -90,3 +90,10 @@ def resizeEyes(frame, detected):
 		return resize(eyes, (42, 42))
 	else:
 		return False
+
+def endOperation(readings):
+	"""
+	This function checks if the user did two long blinks which would
+	indicate that the typing functionality should startup up/shut down
+	"""
+	
