@@ -14,12 +14,12 @@ def main():
 	    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 	    # Display the resulting frame
-	    cv2.imshow('frame', frame)
+#	    cv2.imshow('frame', frame)
 
 	    # Save the eyes to the directory
 	    detected = detectEyes(gray)
 	    resizedEyes = resizeEyes(frame, detected)
-	    print(resizedEyes)
+	    print(detected)
 #	    cv2.imwrite(directory + '/img' + str(index) + '.png', frame)
 	    index = index + 1
 	    if cv2.waitKey(1) & 0xFF == ord('q'):
